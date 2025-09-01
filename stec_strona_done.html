@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gdynia Fitness Studio | Treningi Motoryczne & Personalne</title>
+    <meta name="description" content="Elitarny klub fitness w Gdynia. Treningi motoryczne, personalne i grupowe. Transformuj swoje ciało z najlepszymi trenerami.">
+    <meta name="keywords" content="fitness Gdynia, trening motoryczny Gdynia, klub fitness Gdynia, trening personalny Gdynia">
+    <meta name="author" content="Gdynia Fitness Studio">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gdynia Fitness Studio - Elitarny Klub Fitness">
+    <meta property="og:description" content="Profesjonalne treningi motoryczne i personalne w Gdynia. Dołącz do elity fitness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gdyniafitnessstudio.pl">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark': '#000000',
+                        'darker': '#0a0a0a',
+                        'light': '#ffffff',
+                        'accent': '#fbbf24',
+                        'gray-dark': '#1f1f1f',
+                        'gray-light': '#2a2a2a'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-in': 'slideIn 0.8s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+            to { box-shadow: 0 0 30px rgba(251, 191, 36, 0.8); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .hero-bg {
+            background: radial-gradient(circle at 30% 20%, #1f1f1f 0%, #000000 100%);
+        }
+        
+        .card-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-glow {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+        }
+        
+        .section-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light font-sans overflow-x-hidden">
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gdynia Fitness Studio",
+        "description": "Elitarny klub fitness specjalizujący się w treningach motorycznych i personalnych",
+        "url": "https://gdyniafitnessstudio.pl",
+        "telephone": "+48-987-654-321",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Sportowa 456",
+            "addressLocality": "Gdynia",
+            "postalCode": "81-000",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.5189,
+            "longitude": 18.5305
+        },
+        "openingHours": "Mo-Su 05:00-24:00",
+        "priceRange": "$$$",
+        "sameAs": [
+            "https://instagram.com/gdyniafitnessstudio",
+            "https://facebook.com/gdyniafitnessstudio"
+        ]
+    }
+    </script>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-accent/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="gradient-text">Gdynia</span>
+                    <span class="text-light">Fitness</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#about" class="text-light hover:text-accent transition-colors duration-300">O nas</a>
+                    <a href="#services" class="text-light hover:text-accent transition-colors duration-300">Usługi</a>
+                    <a href="#trainers" class="text-light hover:text-accent transition-colors duration-300">Trenerzy</a>
+                    <a href="#pricing" class="text-light hover:text-accent transition-colors duration-300">Cennik</a>
+                    <a href="#contact" class="text-light hover:text-accent transition-colors duration-300">Kontakt</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <button class="btn-glow px-6 py-2 rounded-full font-semibold text-dark">
+                        Dołącz teraz
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-light" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-4 pt-4 border-t border-accent/20" id="mobile-menu">
+                <div class="space-y-4">
+                    <a href="#about" class="block text-light hover:text-accent transition-colors">O nas</a>
+                    <a href="#services" class="block text-light hover:text-accent transition-colors">Usługi</a>
+                    <a href="#trainers" class="block text-light hover:text-accent transition-colors">Trenerzy</a>
+                    <a href="#pricing" class="block text-light hover:text-accent transition-colors">Cennik</a>
+                    <a href="#contact" class="block text-light hover:text-accent transition-colors">Kontakt</a>
+                    <button class="btn-glow w-full px-6 py-2 rounded-full font-semibold text-dark mt-4">
+                        Dołącz teraz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-20 w-32 h-32 bg-accent/20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 bg-accent/30 rounded-full animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute bottom-32 left-32 w-40 h-40 bg-accent/10 rounded-full animate-float" style="animation-delay: -4s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10" data-aos="slide-in">
+            <h1 class="text-6xl lg:text-8xl font-black mb-8">
+                <span class="text-light">TRANSFORMUJ</span><br>
+                <span class="gradient-text">SWOJE CIAŁO</span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Elitarny klub fitness w Gdynia, gdzie profesjonalni trenerzy pomogą Ci osiągnąć 
+                perfekcyjną formę poprzez zaawansowane treningi motoryczne i personalne.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button class="btn-glow px-10 py-4 rounded-full text-xl font-bold text-dark">
+                    Rozpocznij transformację
+                </button>
+                <button class="border-2 border-accent text-accent px-10 py-4 rounded-full text-xl font-bold hover:bg-accent hover:text-dark transition-all duration-300">
+                    Zobacz galerię
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-accent text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-darker section-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">DLACZEGO</span> 
+                    <span class="text-light">MY?</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Jesteśmy nie tylko klubem fitness, ale społecznością ludzi dążących do doskonałości
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="card-glass p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-light mb-4">Premium Quality</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Najwyższej jakości sprzęt, ekskluzywne wnętrza i indywidualne podejście do każdego klienta.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="card-glass p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-light mb-4">Expert Community</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Dołącz do elitarnej społeczności ludzi, którzy rozumieją, że fitness to styl życia.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="card-glass p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-light mb-4">Fast Results</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nasze metody treningowe gwarantują szybkie i trwałe rezultaty już po pierwszych sesjach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="text-light">NASZE</span> 
+                    <span class="gradient-text">USŁUGI</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Kompleksowe podejście do fitness, które łączy naukę z praktyką
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <!-- Service Description -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <h3 class="text-4xl font-bold text-light">
+                        Treningi <span class="gradient-text">Motoryczne</span>
+                    </h3>
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Nasze treningi motoryczne to nie tylko ćwiczenia fizyczne, ale kompleksowy system 
+                        rozwoju ciała i umysłu. Łączymy najnowsze odkrycia naukowe z tradycyjnymi metodami treningowymi.
+                    </p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-accent text-xl"></i>
+                            <span>Indywidualne plany treningowe</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-accent text-xl"></i>
+                            <span>Zaawansowana analiza biomechaniczna</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-accent text-xl"></i>
+                            <span>Monitoring postępów w czasie rzeczywistym</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Visual -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="card-glass p-12 rounded-3xl text-center">
+                        <div class="w-32 h-32 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                            <i class="fas fa-dumbbell text-5xl text-accent"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-light mb-4">Elite Training</h4>
+                        <p class="text-gray-300">
+                            Doświadcz profesjonalnego treningu na najwyższym poziomie
+                        </p>
+                    </div>
+                    
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent/30 rounded-full animate-float"></div>
+                    <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-accent/20 rounded-full animate-float" style="animation-delay: -3s;"></div>
+                </div>
+            </div>
+            
+            <!-- Service Categories -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="card-glass p-8 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-heartbeat text-2xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-4">Personal Training</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Indywidualne sesje z doświadczonymi trenerami, dostosowane do Twoich celów i możliwości.
+                    </p>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="card-glass p-8 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-users text-2xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-4">Group Classes</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Dynamiczne zajęcia grupowe prowadzone przez energicznych instruktorów w przyjaznej atmosferze.
+                    </p>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="card-glass p-8 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-brain text-2xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-4">Mind & Body</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Programy łączące trening fizyczny z technikami mentalnymi dla pełnej harmonii ciała i umysłu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="py-24 bg-darker section-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">NASI</span> 
+                    <span class="text-light">TRENERZY</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Poznaj zespół ekspertów, którzy pomogą Ci osiągnąć cele fitness
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <!-- Lead Trainer -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="card-glass p-12 rounded-3xl text-center">
+                        <div class="w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <i class="fas fa-user-tie text-6xl text-accent"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-light mb-4">Marek Kowalski</h3>
+                        <p class="text-accent text-lg mb-4">Head Trainer & Founder</p>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Certyfikowany trener personalny z 12-letnim doświadczeniem. Specjalista w treningach motorycznych 
+                            i rehabilitacji sportowej. Ukończył prestiżowe kursy w USA i Europie.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm">FMS Level 3</span>
+                            <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm">NSCA-CSCS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trainer Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <h3 class="text-4xl font-bold text-light">
+                        Eksperci <span class="gradient-text">Fitness</span>
+                    </h3>
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Nasi trenerzy to nie tylko instruktorzy, ale prawdziwi mentorzy, którzy rozumieją, 
+                        że każdy klient jest wyjątkowy i wymaga indywidualnego podejścia.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">15+</div>
+                            <div class="text-gray-300">Lat doświadczenia</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">1000+</div>
+                            <div class="text-gray-300">Zadowolonych klientów</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">25+</div>
+                            <div class="text-gray-300">Certyfikatów</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2">24/7</div>
+                            <div class="text-gray-300">Wsparcie</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other Trainers -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Trainer 2 -->
+                <div class="card-glass p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-female text-3xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-2">Anna Nowak</h4>
+                    <p class="text-accent text-sm mb-4">Yoga & Pilates Expert</p>
+                    <p class="text-gray-300 text-sm">
+                        Specjalistka w treningach funkcjonalnych i technikach relaksacyjnych.
+                    </p>
+                </div>
+                
+                <!-- Trainer 3 -->
+                <div class="card-glass p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-male text-3xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-2">Piotr Wiśniewski</h4>
+                    <p class="text-accent text-sm mb-4">Strength & Conditioning</p>
+                    <p class="text-gray-300 text-sm">
+                        Ekspert w treningach siłowych i przygotowaniu motorycznym sportowców.
+                    </p>
+                </div>
+                
+                <!-- Trainer 4 -->
+                <div class="card-glass p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/40 transition-colors">
+                        <i class="fas fa-running text-3xl text-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-light mb-2">Katarzyna Zielińska</h4>
+                    <p class="text-accent text-sm mb-4">Cardio & HIIT Specialist</p>
+                    <p class="text-gray-300 text-sm">
+                        Mistrzyni w treningach interwałowych i poprawie wydolności organizmu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="text-light">WYBIERZ</span> 
+                    <span class="gradient-text">PAKIET</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Elitarne członkostwo w najlepszym klubie fitness w Gdynia
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic Package -->
+                <div class="card-glass p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-light mb-4">Basic</h3>
+                    <div class="text-5xl font-bold text-accent mb-2">299 zł</div>
+                    <div class="text-gray-300 mb-8">miesięcznie</div>
+                    
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Dostęp do sali treningowej</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Zajęcia grupowe (5x/miesiąc)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Konsultacja z trenerem</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Analiza składu ciała</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 border-2 border-accent text-accent rounded-full font-semibold hover:bg-accent hover:text-dark transition-all duration-300">
+                        Wybierz pakiet
+                    </button>
+                </div>
+                
+                <!-- Premium Package -->
+                <div class="card-glass p-8 rounded-3xl text-center relative hover:scale-105 transition-transform duration-500 border-2 border-accent" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-dark px-6 py-2 rounded-full text-sm font-bold">NAJPOPULARNIEJSZY</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-light mb-4">Premium</h3>
+                    <div class="text-5xl font-bold text-accent mb-2">599 zł</div>
+                    <div class="text-gray-300 mb-8">miesięcznie</div>
+                    
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Wszystko z Basic</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Nieograniczone zajęcia grupowe</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">2 sesje personalne/miesiąc</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Plan żywieniowy</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Wsparcie 24/7</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 bg-accent text-dark rounded-full font-semibold hover:bg-accent/90 transition-all duration-300">
+                        Wybierz pakiet
+                    </button>
+                </div>
+                
+                <!-- Elite Package -->
+                <div class="card-glass p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold text-light mb-4">Elite</h3>
+                    <div class="text-5xl font-bold text-accent mb-2">999 zł</div>
+                    <div class="text-gray-300 mb-8">miesięcznie</div>
+                    
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Wszystko z Premium</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">5 sesji personalnych/miesiąc</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Indywidualny plan treningowy</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Monitoring postępów</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-accent"></i>
+                            <span class="text-gray-300">Priorytetowe rezerwacje</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 border-2 border-accent text-accent rounded-full font-semibold hover:bg-accent hover:text-dark transition-all duration-300">
+                        Wybierz pakiet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-darker section-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="gradient-text">GALERIA</span> 
+                    <span class="text-light">STUDIO</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Zobacz nasze ekskluzywne wnętrza i profesjonalny sprzęt
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-dumbbell text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Strefa siłowa</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-running text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Strefa cardio</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-spa text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Strefa relaksu</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-users text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Sala grupowa</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-shower text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Szatnie premium</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-coffee text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Strefa regeneracji</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-medal text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Sukcesy klientów</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card-glass p-6 rounded-2xl text-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-32 bg-accent/20 rounded-xl mb-4 flex items-center justify-center group-hover:bg-accent/40 transition-colors">
+                            <i class="fas fa-plus text-3xl text-accent"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm">Więcej zdjęć</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-in">
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6">
+                    <span class="text-light">SKONTAKTUJ</span> 
+                    <span class="gradient-text">SIĘ</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Gotowy na transformację? Skontaktuj się z nami i rozpocznij swoją podróż do lepszej wersji siebie
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <h3 class="text-3xl font-bold text-light">
+                        Wyślij <span class="gradient-text">wiadomość</span>
+                    </h3>
+                    
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Imię i nazwisko</label>
+                                <input type="text" class="w-full p-4 bg-gray-dark border border-gray-light rounded-xl text-light focus:border-accent focus:outline-none transition-colors" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Telefon</label>
+                                <input type="tel" class="w-full p-4 bg-gray-dark border border-gray-light rounded-xl text-light focus:border-accent focus:outline-none transition-colors" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" class="w-full p-4 bg-gray-dark border border-gray-light rounded-xl text-light focus:border-accent focus:outline-none transition-colors" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2">Wiadomość</label>
+                            <textarea rows="5" class="w-full p-4 bg-gray-dark border border-gray-light rounded-xl text-light focus:border-accent focus:outline-none transition-colors resize-none" placeholder="Opisz swoje cele fitness..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-accent text-dark rounded-xl font-bold text-lg hover:bg-accent/90 transition-all duration-300">
+                            Wyślij wiadomość
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold text-light">
+                        Informacje <span class="gradient-text">kontaktowe</span>
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-light font-semibold mb-1">Adres</h4>
+                                <p class="text-gray-300">ul. Sportowa 456, 81-000 Gdynia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-light font-semibold mb-1">Telefon</h4>
+                                <p class="text-gray-300">+48 987 654 321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-light font-semibold mb-1">Email</h4>
+                                <p class="text-gray-300">kontakt@gdyniafitnessstudio.pl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-light font-semibold mb-1">Godziny otwarcia</h4>
+                                <p class="text-gray-300">Poniedziałek - Niedziela: 05:00 - 24:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="pt-6">
+                        <h4 class="text-light font-semibold mb-4">Śledź nas</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="text-center mt-20" data-aos="fade-in">
+                <h3 class="text-4xl font-bold text-light mb-6">
+                    Gotowy na <span class="gradient-text">transformację</span>?
+                </h3>
+                <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Dołącz do elitarnej społeczności fitness i rozpocznij swoją podróż do lepszej wersji siebie już dziś!
+                </p>
+                <button class="btn-glow px-12 py-4 rounded-full text-xl font-bold text-dark">
+                    Dołącz teraz
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-20 border-t border-accent/20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12 mb-12">
+                <!-- Logo & Info -->
+                <div class="lg:col-span-2">
+                    <div class="text-3xl font-bold mb-6">
+                        <span class="gradient-text">Gdynia</span>
+                        <span class="text-light">Fitness</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-lg leading-relaxed">
+                        Elitarny klub fitness w Gdynia, gdzie profesjonalni trenerzy pomagają klientom 
+                        osiągnąć perfekcyjną formę poprzez zaawansowane treningi motoryczne i personalne.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center hover:bg-accent hover:text-dark transition-all duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-light mb-6">Szybkie linki</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-300 hover:text-accent transition-colors duration-300">O nas</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-accent transition-colors duration-300">Usługi</a></li>
+                        <li><a href="#trainers" class="text-gray-300 hover:text-accent transition-colors duration-300">Trenerzy</a></li>
+                        <li><a href="#pricing" class="text-gray-300 hover:text-accent transition-colors duration-300">Cennik</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-accent transition-colors duration-300">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold text-light mb-6">Kontakt</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>ul. Sportowa 456</li>
+                        <li>81-000 Gdynia</li>
+                        <li>+48 987 654 321</li>
+                        <li>kontakt@gdyniafitnessstudio.pl</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-accent/20 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2024 Gdynia Fitness Studio. Wszystkie prawa zastrzeżone.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name') || 'Użytkownik';
+                
+                // Show success message
+                alert(`Dziękujemy ${name}! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+
+        // Gallery lightbox effect
+        const galleryItems = document.querySelectorAll('.group');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Create lightbox
+                const lightbox = document.createElement('div');
+                lightbox.className = 'fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center';
+                lightbox.innerHTML = `
+                    <div class="relative max-w-4xl max-h-full p-4">
+                        <button class="absolute top-4 right-4 text-white text-4xl hover:text-accent transition-colors">&times;</button>
+                        <div class="card-glass p-8 rounded-3xl text-center">
+                            <i class="fas fa-image text-6xl text-accent mb-4"></i>
+                            <h3 class="text-2xl font-bold text-light mb-2">Galeria Studio</h3>
+                            <p class="text-gray-300">Tutaj będą wyświetlane rzeczywiste zdjęcia z naszego studia</p>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(lightbox);
+                
+                // Close lightbox
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox || e.target.tagName === 'BUTTON') {
+                        lightbox.remove();
+                    }
+                });
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-black');
+                header.classList.remove('bg-black/90');
+            } else {
+                header.classList.remove('bg-black');
+                header.classList.add('bg-black/90');
+            }
+        });
+
+        // CTA button effects
+        const ctaButtons = document.querySelectorAll('.btn-glow, button[class*="bg-accent"]');
+        
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Add click effect
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+                
+                // Handle different CTA actions
+                const buttonText = button.textContent.toLowerCase();
+                if (buttonText.includes('dołącz') || buttonText.includes('transformację')) {
+                    e.preventDefault();
+                    // Scroll to contact form
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Performance optimization
+        let ticking = false;
+        
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Update scroll-based animations here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Parallax effect for hero section
+        const heroSection = document.querySelector('.hero-bg');
+        const floatingElements = document.querySelectorAll('.animate-float');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            floatingElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${rate * speed}px)`;
+            });
+        });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Gdynia Fitness Studio - Strona załadowana pomyślnie!');
+            
+            // Preload critical resources
+            const criticalResources = [
+                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                'https://unpkg.com/aos@2.3.1/dist/aos.css'
+            ];
+            
+            criticalResources.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = src;
+                link.as = 'style';
+                document.head.appendChild(link);
+            });
+            
+            // Add loading animation
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add some interactive elements
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.className = 'fixed w-4 h-4 bg-accent rounded-full pointer-events-none z-50';
+            cursor.style.left = e.clientX - 8 + 'px';
+            cursor.style.top = e.clientY - 8 + 'px';
+            cursor.style.opacity = '0.7';
+            
+            document.body.appendChild(cursor);
+            
+            setTimeout(() => {
+                cursor.remove();
+            }, 100);
+        });
+
+        // Add scroll progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.className = 'fixed top-0 left-0 w-0 h-1 bg-gradient-to-r from-accent to-accent/50 z-50 transition-all duration-300';
+        document.body.appendChild(progressBar);
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
