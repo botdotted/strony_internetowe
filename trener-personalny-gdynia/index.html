@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trener Personalny Gdynia - Treningi Motoryczne | Profesjonalne Treningi</title>
+    <meta name="description" content="Profesjonalny trener personalny w Gdyni. Treningi motoryczne, treningi personalne. Osiągnij swoje cele fitness z doświadczonym trenerem.">
+    <meta name="keywords" content="trener personalny Gdynia, trening motoryczny Gdynia, trening personalny Gdynia, fitness Gdynia">
+    <meta name="author" content="Trener Personalny Gdynia">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Trener Personalny Gdynia - Treningi Motoryczne">
+    <meta property="og:description" content="Profesjonalne treningi personalne i motoryczne w Gdyni. Osiągnij swoje cele fitness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trenerpersonalnygdynia.pl">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-black': '#0a0a0a',
+                        'custom-gray': '#1a1a1a',
+                        'custom-white': '#ffffff',
+                        'custom-accent': '#e5e5e5'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'scale-hover': 'scaleHover 0.3s ease-in-out'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scaleHover {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #ffffff, #e5e5e5);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ffffff, #e5e5e5);
+            color: #0a0a0a;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.95);
+        }
+    </style>
+</head>
+<body class="bg-custom-black text-custom-white font-sans">
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Trener Personalny Gdynia",
+        "description": "Profesjonalne treningi motoryczne i personalne w Gdyni",
+        "url": "https://trenerpersonalnygdynia.pl",
+        "telephone": "+48-123-456-789",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Przykładowa 123",
+            "addressLocality": "Gdynia",
+            "postalCode": "81-000",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.5189,
+            "longitude": 18.5305
+        },
+        "openingHours": "Mo-Fr 06:00-22:00, Sa-Su 08:00-20:00",
+        "priceRange": "$$",
+        "sameAs": [
+            "https://facebook.com/trenerpersonalnygdynia",
+            "https://instagram.com/trenerpersonalnygdynia"
+        ]
+    }
+    </script>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header fixed top-0 w-full z-50 border-b border-custom-gray">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-custom-white">
+                    <i class="fas fa-dumbbell mr-2"></i>
+                    Trener Gdynia
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#o-mnie" class="hover:text-custom-accent transition-colors">O mnie</a>
+                    <a href="#metody" class="hover:text-custom-accent transition-colors">Metody</a>
+                    <a href="#programy" class="hover:text-custom-accent transition-colors">Programy</a>
+                    <a href="#sukcesy" class="hover:text-custom-accent transition-colors">Sukcesy</a>
+                    <a href="#kontakt" class="hover:text-custom-accent transition-colors">Kontakt</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="btn-primary px-6 py-2 rounded-full font-semibold">
+                        Umów trening
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-custom-white" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="py-4 space-y-4 border-t border-custom-gray mt-4">
+                    <a href="#o-mnie" class="block hover:text-custom-accent transition-colors">O mnie</a>
+                    <a href="#metody" class="block hover:text-custom-accent transition-colors">Metody</a>
+                    <a href="#programy" class="block hover:text-custom-accent transition-colors">Programy</a>
+                    <a href="#sukcesy" class="block hover:text-custom-accent transition-colors">Sukcesy</a>
+                    <a href="#kontakt" class="block hover:text-custom-accent transition-colors">Kontakt</a>
+                    <button class="btn-primary w-full px-6 py-2 rounded-full font-semibold mt-4">
+                        Umów trening
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-custom-white">
+                Trener Personalny <span class="text-custom-accent">Gdynia</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-custom-accent max-w-3xl mx-auto">
+                Profesjonalne treningi motoryczne i personalne. Osiągnij swoje cele fitness z doświadczonym trenerem.
+            </p>
+            <div class="space-x-4">
+                <button class="btn-primary px-8 py-4 rounded-full text-lg font-bold">
+                    Umów trening
+                </button>
+                <button class="border-2 border-custom-white text-custom-white px-8 py-4 rounded-full text-lg font-bold hover:bg-custom-white hover:text-custom-black transition-all">
+                    Zobacz programy
+                </button>
+            </div>
+        </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-2 h-2 bg-custom-accent rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-1 h-1 bg-custom-accent rounded-full animate-pulse delay-1000"></div>
+            <div class="absolute bottom-40 left-20 w-3 h-3 bg-custom-accent rounded-full animate-pulse delay-2000"></div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- O mnie Section -->
+    <section id="o-mnie" class="py-20 bg-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    O mnie
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Doświadczony trener personalny specjalizujący się w treningach motorycznych
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="slide-up">
+                    <div class="bg-custom-black p-8 rounded-2xl border border-custom-gray">
+                        <h3 class="text-2xl font-bold mb-4 text-custom-white">
+                            Trener Personalny Gdynia
+                        </h3>
+                        <p class="text-custom-accent mb-6 leading-relaxed">
+                            Jestem certyfikowanym trenerem personalnym z ponad 8-letnim doświadczeniem w prowadzeniu treningów motorycznych. 
+                            Specjalizuję się w treningach funkcjonalnych, siłowych i kondycyjnych, dostosowanych do indywidualnych potrzeb klientów.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-custom-black rounded-lg border border-custom-gray">
+                                <div class="text-3xl font-bold text-custom-accent mb-2">8+</div>
+                                <div class="text-sm text-custom-accent">Lat doświadczenia</div>
+                            </div>
+                            <div class="text-center p-4 bg-custom-black rounded-lg border border-custom-gray">
+                                <div class="text-3xl font-bold text-custom-accent mb-2">500+</div>
+                                <div class="text-sm text-custom-accent">Zadowolonych klientów</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-aos="slide-up" data-aos-delay="200">
+                    <div class="bg-custom-black p-8 rounded-2xl border border-custom-gray">
+                        <h4 class="text-xl font-bold mb-6 text-custom-white">Certyfikaty i kwalifikacje:</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-certificate text-custom-accent text-xl"></i>
+                                <span class="text-custom-accent">Trener Personalny - IFBB</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-certificate text-custom-accent text-xl"></i>
+                                <span class="text-custom-accent">Instruktor Kulturystyki</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-certificate text-custom-accent text-xl"></i>
+                                <span class="text-custom-accent">Trening Motoryczny - FMS</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-certificate text-custom-accent text-xl"></i>
+                                <span class="text-custom-accent">Dietetyka Sportowa</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder for trainer photo -->
+                    <div class="absolute -top-4 -right-4 w-32 h-32 bg-custom-accent rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-custom-black"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Metody Section -->
+    <section id="metody" class="py-20 bg-custom-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Metody treningowe
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Nowoczesne podejście do treningów motorycznych i personalnych
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Metoda 1 -->
+                <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-custom-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dumbbell text-2xl text-custom-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-custom-white mb-2">Trening Siłowy</h3>
+                    </div>
+                    <p class="text-custom-accent text-center leading-relaxed">
+                        Budowanie siły i masy mięśniowej poprzez progresywne obciążenia i techniki zaawansowane.
+                    </p>
+                </div>
+                
+                <!-- Metoda 2 -->
+                <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-custom-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-running text-2xl text-custom-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-custom-white mb-2">Trening Funkcjonalny</h3>
+                    </div>
+                    <p class="text-custom-accent text-center leading-relaxed">
+                        Ruchy wzorowane na codziennych aktywnościach, poprawiające mobilność i stabilność.
+                    </p>
+                </div>
+                
+                <!-- Metoda 3 -->
+                <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-custom-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heartbeat text-2xl text-custom-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-custom-white mb-2">Trening Kondycyjny</h3>
+                    </div>
+                    <p class="text-custom-accent text-center leading-relaxed">
+                        Poprawa wydolności organizmu poprzez różnorodne formy treningu cardio i interwałowego.
+                    </p>
+                </div>
+                
+                <!-- Metoda 4 -->
+                <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-custom-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-2xl text-custom-black"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-custom-white mb-2">Trening Motoryczny</h3>
+                    </div>
+                    <p class="text-custom-accent text-center leading-relaxed">
+                        Specjalistyczne ćwiczenia poprawiające koordynację, równowagę i kontrolę motoryczną.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Programy Section -->
+    <section id="programy" class="py-20 bg-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Programy treningowe
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Wybierz pakiet dopasowany do swoich potrzeb i celów
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-custom-black p-8 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-custom-white mb-2">Starter</h3>
+                        <div class="text-4xl font-bold text-custom-accent mb-2">150 zł</div>
+                        <div class="text-custom-accent">za sesję</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">1 sesja treningowa</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Analiza składu ciała</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Plan treningowy</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-custom-accent mb-2">
+                            <span>Popularność</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-custom-gray rounded-full h-2">
+                            <div class="progress-bar h-2 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary w-full py-3 rounded-full font-semibold">
+                        Wybierz pakiet
+                    </button>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-custom-black p-8 rounded-2xl border-2 border-custom-accent card-hover relative" data-aos="slide-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-custom-accent text-custom-black px-4 py-1 rounded-full text-sm font-bold">NAJPOPULARNIEJSZY</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-custom-white mb-2">Premium</h3>
+                        <div class="text-4xl font-bold text-custom-accent mb-2">400 zł</div>
+                        <div class="text-custom-accent">za miesiąc</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">8 sesji treningowych</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Plan żywieniowy</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Wsparcie 24/7</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Analiza postępów</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-custom-accent mb-2">
+                            <span>Popularność</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-custom-gray rounded-full h-2">
+                            <div class="progress-bar h-2 rounded-full transition-all duration-1000" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary w-full py-3 rounded-full font-semibold">
+                        Wybierz pakiet
+                    </button>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-custom-black p-8 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-custom-white mb-2">Elite</h3>
+                        <div class="text-4xl font-bold text-custom-accent mb-2">800 zł</div>
+                        <div class="text-custom-accent">za miesiąc</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">12 sesji treningowych</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Indywidualny plan</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Konsultacje online</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-check text-custom-accent"></i>
+                            <span class="text-custom-accent">Monitoring 24/7</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-custom-accent mb-2">
+                            <span>Popularność</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="w-full bg-custom-gray rounded-full h-2">
+                            <div class="progress-bar h-2 rounded-full transition-all duration-1000" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary w-full py-3 rounded-full font-semibold">
+                        Wybierz pakiet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Sukcesy Section -->
+    <section id="sukcesy" class="py-20 bg-custom-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Sukcesy i wyniki
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Sprawdź, co osiągnęli moi klienci dzięki treningom motorycznym
+                </p>
+            </div>
+            
+            <!-- Statystyki -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center" data-aos="slide-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold text-custom-accent mb-2">500+</div>
+                    <div class="text-custom-accent">Zadowolonych klientów</div>
+                </div>
+                <div class="text-center" data-aos="slide-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold text-custom-accent mb-2">1000+</div>
+                    <div class="text-custom-accent">Sesji treningowych</div>
+                </div>
+                <div class="text-center" data-aos="slide-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold text-custom-accent mb-2">95%</div>
+                    <div class="text-custom-accent">Skuteczność</div>
+                </div>
+                <div class="text-center" data-aos="slide-up" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-bold text-custom-accent mb-2">8+</div>
+                    <div class="text-custom-accent">Lat doświadczenia</div>
+                </div>
+            </div>
+            
+            <!-- Carousel Opinii -->
+            <div class="relative" data-aos="fade-in">
+                <h3 class="text-2xl font-bold text-center mb-8 text-custom-white">Opinie klientów</h3>
+                
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonials-carousel">
+                        <!-- Opinia 1 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-custom-accent rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-user text-custom-black"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-custom-white">Anna K.</div>
+                                        <div class="text-sm text-custom-accent">Gdynia</div>
+                                    </div>
+                                </div>
+                                <p class="text-custom-accent leading-relaxed">
+                                    "Dzięki treningom motorycznym z trenerem odzyskałam sprawność po kontuzji. 
+                                    Profesjonalne podejście i świetne rezultaty!"
+                                </p>
+                                <div class="flex text-custom-accent mt-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Opinia 2 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-custom-accent rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-user text-custom-black"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-custom-white">Marek S.</div>
+                                        <div class="text-sm text-custom-accent">Gdynia</div>
+                                    </div>
+                                </div>
+                                <p class="text-custom-accent leading-relaxed">
+                                    "Treningi personalne w Gdyni na najwyższym poziomie. 
+                                    W 3 miesiące poprawiłem siłę i kondycję o 40%!"
+                                </p>
+                                <div class="flex text-custom-accent mt-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Opinia 3 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-custom-gray p-6 rounded-2xl border border-custom-gray h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-custom-accent rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-user text-custom-black"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-custom-white">Katarzyna L.</div>
+                                        <div class="text-sm text-custom-accent">Gdynia</div>
+                                    </div>
+                                </div>
+                                <p class="text-custom-accent leading-relaxed">
+                                    "Najlepszy trener personalny w Gdyni! Treningi motoryczne 
+                                    pomogły mi wrócić do formy po ciąży."
+                                </p>
+                                <div class="flex text-custom-accent mt-4">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button class="w-3 h-3 bg-custom-accent rounded-full carousel-dot active" data-slide="0"></button>
+                    <button class="w-3 h-3 bg-custom-gray rounded-full carousel-dot" data-slide="1"></button>
+                    <button class="w-3 h-3 bg-custom-gray rounded-full carousel-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Blog Section -->
+    <section class="py-20 bg-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Blog i porady
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Przydatne wskazówki i porady dotyczące treningów motorycznych
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-custom-black p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="100">
+                    <div class="w-full h-48 bg-custom-accent rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-4xl text-custom-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-white mb-3">
+                        Jak rozpocząć trening motoryczny?
+                    </h3>
+                    <p class="text-custom-accent mb-4 leading-relaxed">
+                        Praktyczny przewodnik dla początkujących, którzy chcą rozpocząć swoją przygodę z treningami motorycznymi.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-custom-accent">5 min czytania</span>
+                        <button class="text-custom-accent hover:text-custom-white transition-colors">
+                            Czytaj więcej →
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="bg-custom-black p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="200">
+                    <div class="w-full h-48 bg-custom-accent rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-utensils text-4xl text-custom-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-white mb-3">
+                        Odżywianie w treningu motorycznym
+                    </h3>
+                    <p class="text-custom-accent mb-4 leading-relaxed">
+                        Wszystko o tym, jak prawidłowo się odżywiać, aby maksymalizować efekty treningów motorycznych.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-custom-accent">7 min czytania</span>
+                        <button class="text-custom-accent hover:text-custom-white transition-colors">
+                            Czytaj więcej →
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="bg-custom-black p-6 rounded-2xl border border-custom-gray card-hover" data-aos="slide-up" data-aos-delay="300">
+                    <div class="w-full h-48 bg-custom-accent rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-heart text-4xl text-custom-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-custom-white mb-3">
+                        Regeneracja po treningu
+                    </h3>
+                    <p class="text-custom-accent mb-4 leading-relaxed">
+                        Kluczowe elementy regeneracji, które pomogą Ci osiągnąć lepsze wyniki w treningach.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-custom-accent">6 min czytania</span>
+                        <button class="text-custom-accent hover:text-custom-white transition-colors">
+                            Czytaj więcej →
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-custom-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Często zadawane pytania
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Odpowiedzi na najczęstsze pytania o treningi motoryczne
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-custom-gray rounded-2xl border border-custom-gray" data-aos="slide-up" data-aos-delay="100">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center hover:bg-custom-black transition-colors">
+                        <h3 class="text-lg font-semibold text-custom-white">
+                            Jak często powinienem trenować?
+                        </h3>
+                        <i class="fas fa-chevron-down text-custom-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-custom-accent leading-relaxed">
+                            Optymalna częstotliwość to 3-4 treningi tygodniowo. Jednak wszystko zależy od Twoich celów, 
+                            poziomu zaawansowania i dostępnego czasu. Konsultuję to indywidualnie z każdym klientem.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-custom-gray rounded-2xl border border-custom-gray" data-aos="slide-up" data-aos-delay="200">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center hover:bg-custom-black transition-colors">
+                        <h3 class="text-lg font-semibold text-custom-white">
+                            Czy treningi motoryczne są bezpieczne?
+                        </h3>
+                        <i class="fas fa-chevron-down text-custom-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-custom-accent leading-relaxed">
+                            Tak, treningi motoryczne są bardzo bezpieczne, gdy są prowadzone pod okiem doświadczonego trenera. 
+                            Każdy program jest dostosowany do indywidualnych możliwości i ograniczeń klienta.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-custom-gray rounded-2xl border border-custom-gray" data-aos="slide-up" data-aos-delay="300">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center hover:bg-custom-black transition-colors">
+                        <h3 class="text-lg font-semibold text-custom-white">
+                            Jak długo trwa sesja treningowa?
+                        </h3>
+                        <i class="fas fa-chevron-down text-custom-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-custom-accent leading-relaxed">
+                            Standardowa sesja trwa 60 minut. W tym czasie wykonujemy rozgrzewkę, główną część treningu 
+                            i rozciąganie. Czas może być dostosowany do Twoich potrzeb.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-custom-gray rounded-2xl border border-custom-gray" data-aos="slide-up" data-aos-delay="400">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center hover:bg-custom-black transition-colors">
+                        <h3 class="text-lg font-semibold text-custom-white">
+                            Czy potrzebuję specjalnego sprzętu?
+                        </h3>
+                        <i class="fas fa-chevron-down text-custom-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-custom-accent leading-relaxed">
+                            Nie, większość treningów motorycznych można wykonywać z podstawowym sprzętem lub bez niego. 
+                            Dysponuję profesjonalnym wyposażeniem w swojej sali treningowej w Gdyni.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Galeria Section -->
+    <section class="py-20 bg-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Galeria
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Zobacz, jak wyglądają nasze treningi motoryczne
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="100">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Trening siłowy</p>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="200">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-running text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Trening funkcjonalny</p>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="300">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Trening kondycyjny</p>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="400">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-balance-scale text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Trening motoryczny</p>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="500">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-users text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Treningi grupowe</p>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="600">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-home text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Sala treningowa</p>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="700">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-medal text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Sukcesy klientów</p>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item bg-custom-black p-4 rounded-xl border border-custom-gray cursor-pointer hover:scale-105 transition-transform" data-aos="fade-in" data-aos-delay="800">
+                    <div class="w-full h-32 bg-custom-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plus text-3xl text-custom-black"></i>
+                    </div>
+                    <p class="text-custom-accent text-sm mt-2 text-center">Więcej zdjęć</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Harmonogram Section -->
+    <section class="py-20 bg-custom-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Harmonogram dostępności
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Sprawdź dostępne terminy i umów się na trening
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Calendar Grid -->
+                <div class="bg-custom-gray p-8 rounded-2xl border border-custom-gray" data-aos="slide-up">
+                    <div class="grid grid-cols-7 gap-2 mb-6">
+                        <div class="text-center text-custom-accent font-semibold p-2">Pon</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Wt</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Śr</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Czw</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Pt</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Sob</div>
+                        <div class="text-center text-custom-accent font-semibold p-2">Ndz</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-2">
+                        <!-- Calendar Days -->
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">6:00-22:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">6:00-22:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">6:00-22:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">6:00-22:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">6:00-22:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">8:00-20:00</div>
+                        </div>
+                        <div class="calendar-day bg-custom-black p-3 rounded-lg border border-custom-gray text-center cursor-pointer hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <div class="text-sm text-custom-accent">8:00-20:00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <p class="text-custom-accent mb-4">
+                            Godziny dostępności: Pon-Pt 6:00-22:00, Sob-Ndz 8:00-20:00
+                        </p>
+                        <button class="btn-primary px-8 py-3 rounded-full font-semibold">
+                            Sprawdź dostępne terminy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="py-20 bg-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-custom-white">
+                    Kontakt
+                </h2>
+                <p class="text-xl text-custom-accent max-w-2xl mx-auto">
+                    Skontaktuj się ze mną i umów się na pierwszy trening motoryczny
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="space-y-6" data-aos="slide-up">
+                    <h3 class="text-2xl font-bold text-custom-white mb-6">
+                        Wyślij wiadomość
+                    </h3>
+                    
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-custom-accent mb-2">Imię i nazwisko</label>
+                                <input type="text" class="w-full p-3 bg-custom-black border border-custom-gray rounded-lg text-custom-white focus:border-custom-accent focus:outline-none transition-colors" required>
+                            </div>
+                            <div>
+                                <label class="block text-custom-accent mb-2">Telefon</label>
+                                <input type="tel" class="w-full p-3 bg-custom-black border border-custom-gray rounded-lg text-custom-white focus:border-custom-accent focus:outline-none transition-colors" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-custom-accent mb-2">Email</label>
+                            <input type="email" class="w-full p-3 bg-custom-black border border-custom-gray rounded-lg text-custom-white focus:border-custom-accent focus:outline-none transition-colors" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-custom-accent mb-2">Wiadomość</label>
+                            <textarea rows="4" class="w-full p-3 bg-custom-black border border-custom-gray rounded-lg text-custom-white focus:border-custom-accent focus:outline-none transition-colors resize-none" placeholder="Opisz swoje cele treningowe..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg">
+                            Wyślij wiadomość
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Map -->
+                <div class="space-y-6" data-aos="slide-up" data-aos-delay="200">
+                    <div class="bg-custom-black p-6 rounded-2xl border border-custom-gray">
+                        <h3 class="text-xl font-bold text-custom-white mb-4">
+                            Informacje kontaktowe
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-map-marker-alt text-custom-accent text-xl"></i>
+                                <div>
+                                    <div class="text-custom-white font-semibold">Adres</div>
+                                    <div class="text-custom-accent">ul. Przykładowa 123, 81-000 Gdynia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-custom-accent text-xl"></i>
+                                <div>
+                                    <div class="text-custom-white font-semibold">Telefon</div>
+                                    <div class="text-custom-accent">+48 123 456 789</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-custom-accent text-xl"></i>
+                                <div>
+                                    <div class="text-custom-white font-semibold">Email</div>
+                                    <div class="text-custom-accent">kontakt@trenerpersonalnygdynia.pl</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-clock text-custom-accent text-xl"></i>
+                                <div>
+                                    <div class="text-custom-white font-semibold">Godziny otwarcia</div>
+                                    <div class="text-custom-accent">Pon-Pt: 6:00-22:00<br>Sob-Ndz: 8:00-20:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="bg-custom-black p-6 rounded-2xl border border-custom-gray">
+                        <h3 class="text-xl font-bold text-custom-white mb-4">
+                            Lokalizacja
+                        </h3>
+                        <div class="w-full h-48 bg-custom-accent rounded-lg flex items-center justify-center">
+                            <i class="fas fa-map text-4xl text-custom-black"></i>
+                        </div>
+                        <p class="text-custom-accent text-sm mt-2 text-center">
+                            Mapa Google - Gdynia, ul. Przykładowa 123
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="text-center mt-16" data-aos="fade-in">
+                <h3 class="text-3xl font-bold text-custom-white mb-4">
+                    Gotowy na zmianę?
+                </h3>
+                <p class="text-xl text-custom-accent mb-8 max-w-2xl mx-auto">
+                    Umów się na pierwszy trening motoryczny i rozpocznij swoją transformację już dziś!
+                </p>
+                <button class="btn-primary px-10 py-4 rounded-full text-xl font-bold">
+                    Zarezerwuj sesję
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-custom-black py-16 border-t border-custom-gray">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & Info -->
+                <div class="md:col-span-2">
+                    <div class="text-2xl font-bold text-custom-white mb-4">
+                        <i class="fas fa-dumbbell mr-2"></i>
+                        Trener Personalny Gdynia
+                    </div>
+                    <p class="text-custom-accent mb-4 max-w-md">
+                        Profesjonalne treningi motoryczne i personalne w Gdynia. 
+                        Osiągnij swoje cele fitness z doświadczonym trenerem.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-custom-gray rounded-full flex items-center justify-center hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-custom-gray rounded-full flex items-center justify-center hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-custom-gray rounded-full flex items-center justify-center hover:bg-custom-accent hover:text-custom-black transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-custom-white mb-4">Szybkie linki</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#o-mnie" class="text-custom-accent hover:text-custom-white transition-colors">O mnie</a></li>
+                        <li><a href="#metody" class="text-custom-accent hover:text-custom-white transition-colors">Metody</a></li>
+                        <li><a href="#programy" class="text-custom-accent hover:text-custom-white transition-colors">Programy</a></li>
+                        <li><a href="#kontakt" class="text-custom-accent hover:text-custom-white transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold text-custom-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-custom-accent">
+                        <li>ul. Przykładowa 123</li>
+                        <li>81-000 Gdynia</li>
+                        <li>+48 123 456 789</li>
+                        <li>kontakt@trenerpersonalnygdynia.pl</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-custom-gray pt-8 text-center">
+                <p class="text-custom-accent">
+                    © 2024 Trener Personalny Gdynia. Wszystkie prawa zastrzeżone.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content) {
+                        item.classList.add('hidden');
+                        item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current item
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Testimonials Carousel
+        let currentSlide = 0;
+        const carousel = document.getElementById('testimonials-carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        function showSlide(slideIndex) {
+            const slideWidth = 100 / 3; // 3 slides visible on desktop
+            carousel.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+                dot.classList.toggle('bg-custom-accent', index === slideIndex);
+                dot.classList.toggle('bg-custom-gray', index !== slideIndex);
+            });
+        }
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 3;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Progress bar animation on scroll
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        };
+
+        // Trigger progress bar animation
+        window.addEventListener('scroll', animateProgressBars);
+        animateProgressBars(); // Initial check
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name') || 'Użytkownik';
+                
+                // Show success message
+                alert(`Dziękujemy ${name}! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+
+        // Gallery lightbox effect
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Create lightbox
+                const lightbox = document.createElement('div');
+                lightbox.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center';
+                lightbox.innerHTML = `
+                    <div class="relative max-w-4xl max-h-full p-4">
+                        <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300">&times;</button>
+                        <div class="bg-custom-accent p-8 rounded-2xl text-center">
+                            <i class="fas fa-image text-6xl text-custom-black mb-4"></i>
+                            <h3 class="text-2xl font-bold text-custom-black mb-2">Galeria zdjęć</h3>
+                            <p class="text-custom-black">Tutaj będą wyświetlane rzeczywiste zdjęcia z treningów</p>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(lightbox);
+                
+                // Close lightbox
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox || e.target.tagName === 'BUTTON') {
+                        lightbox.remove();
+                    }
+                });
+            });
+        });
+
+        // Calendar day selection
+        const calendarDays = document.querySelectorAll('.calendar-day');
+        
+        calendarDays.forEach(day => {
+            day.addEventListener('click', () => {
+                // Remove active class from all days
+                calendarDays.forEach(d => d.classList.remove('bg-custom-accent', 'text-custom-black'));
+                
+                // Add active class to clicked day
+                day.classList.add('bg-custom-accent', 'text-custom-black');
+                
+                // Show booking modal or redirect
+                setTimeout(() => {
+                    alert('Wybrano dzień! Przekierowujemy do systemu rezerwacji...');
+                }, 300);
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+
+        // CTA button effects
+        const ctaButtons = document.querySelectorAll('.btn-primary');
+        
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Add click effect
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+                
+                // Handle different CTA actions
+                const buttonText = button.textContent.toLowerCase();
+                if (buttonText.includes('umów trening') || buttonText.includes('zarezerwuj')) {
+                    e.preventDefault();
+                    // Scroll to contact form
+                    document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Performance optimization
+        let ticking = false;
+        
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Update scroll-based animations here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Trener Personalny Gdynia - Strona załadowana pomyślnie!');
+            
+            // Preload critical resources
+            const criticalImages = [
+                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+            ];
+            
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = src;
+                link.as = 'style';
+                document.head.appendChild(link);
+            });
+        });
+    </script>
+</body>
+</html>
